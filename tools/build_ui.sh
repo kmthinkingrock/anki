@@ -27,7 +27,7 @@ do
     echo "import $base" >> $temp
     if [ $i -nt $py ]; then
         echo " * "$py
-        pyuic4 $i -o $py
+        pyuic4.bat $i -o $py
         # munge the output to use gettext
         perl -pi.bak -e 's/(QtGui\.QApplication\.)?_?translate\(".*?", /_(/; s/, None.*/))/' $py
         rm $py.bak
